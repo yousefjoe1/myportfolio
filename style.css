@@ -1,0 +1,489 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.start-btn {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background-color: rgb(26, 26, 27);
+  color: white;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px whitesmoke;
+  font-size: 30px;
+}
+
+.start-container {
+  background: url("./images/fbackgr.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  display: none;
+}
+
+.container-active {
+  display: block;
+}
+
+.header {
+  transition: all 1s ease;
+}
+
+.header {
+  background-color: hsl(0, 0%, 0%, 0.7);
+  display: flex;
+  padding: 5px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  margin-bottom: 10px;
+  height: 80px;
+  z-index: 1000;
+}
+
+.header-on-resize {
+  background-color: hsl(0, 0%, 0%, 0.7);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(-200px);
+  transition: all 2s ease;
+}
+
+.show-header {
+  transform: translateX(0px);
+  z-index: 500;
+}
+
+.header-on-resize nav {
+  width: 200px;
+  height: 100vh;
+  z-index: 500;
+}
+
+.header-on-resize nav ul {
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+}
+
+.header-on-resize nav ul li {
+  margin: 10px;
+}
+
+.logo {
+  color: whitesmoke;
+  width: 100px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.nav {
+  align-self: center;
+  flex: 1;
+  padding: 5px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  flex-wrap: wrap;
+  color: aliceblue;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 21px;
+  transition: all 0.2s ease;
+}
+
+.nav ul li a:hover {
+  color: rgb(236, 103, 103);
+  border-bottom: 1px solid aliceblue;
+  text-shadow: 1px 1px 3px whitesmoke;
+}
+
+.close-nav {
+  background-color: rgb(185, 185, 241);
+  display: none;
+  padding: 5px;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.open-nav {
+  background-color: rgb(185, 185, 241);
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+  display: none;
+  position: sticky;
+  left: 10px;
+  top: 10px;
+  z-index: 1000;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.black-layer {
+  background-color: hsl(0, 0%, 0%, 0.5);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.me-continer {
+  background: url("https://wallpaperbat.com/img/183543-web-development-wallpaper-top-free-web-development-background.jpg")
+    no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  object-fit: cover;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  object-fit: fill;
+}
+
+.border-left {
+  height: 300px;
+  width: 10px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.me-div-anime {
+  background-color: rgba(61, 60, 60, 0.7);
+  margin-top: 20px;
+  width: 500px;
+  height: 20px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.me-div {
+  background-color: rgba(61, 60, 60, 0.7);
+  margin-top: 20px;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  transition: all 6s ease;
+  overflow: hidden;
+}
+
+.info p {
+  color: lightblue;
+  font-size: 18px;
+}
+
+.info h1 {
+  color: white;
+}
+
+.info h2 {
+  color: rgb(238, 237, 237);
+}
+
+@media only screen and (max-width: 550px) {
+  .header {
+    display: none;
+  }
+  .open-nav {
+    display: block;
+  }
+}
+
+.about-section {
+  background-color: rgb(233, 233, 233);
+  min-height: 100vh;
+}
+
+.about-div {
+  padding: 70px 10px 10px 10px;
+  max-width: 800px;
+  height: fit-content;
+  margin: 10px auto;
+}
+
+.about-div strong {
+  border-bottom: 2px solid orange;
+}
+
+.about-info {
+  display: flex;
+  padding: 10px;
+  background: rgb(187, 195, 198);
+  background: rgb(142, 188, 205);
+  background: linear-gradient(
+    90deg,
+    rgba(142, 188, 205, 1) 7%,
+    rgba(44, 131, 149, 1) 100%
+  );
+  text-shadow: 1px 1px 2px black;
+  color: aliceblue;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.about-info img {
+  width: 400px;
+}
+
+@media (max-width: 500px) {
+  .about-info img {
+    max-width: 300px;
+    margin-right: 10px;
+  }
+}
+
+.my-info {
+  margin-left: 10px;
+  flex: 1;
+}
+.my-info p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@keyframes rollbtn {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.start-btn {
+  animation-name: rollbtn;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+}
+
+.cv-btn {
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.skills-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.skills-title {
+  color: aliceblue;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.skills-title strong {
+  border-bottom: 1px solid orange;
+}
+
+.skills-div {
+  display: flex;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.left-skills-div {
+  transition: all 2s ease;
+  transform: translateX(-700px);
+  width: 50%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+}
+.right-skills-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 2s ease;
+  transform: translateX(800px);
+  width: 50%;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+}
+
+.skills-div-active div {
+  transform: translateX(0px);
+}
+
+.img-single-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: paleturquoise;
+  animation-name: skills-anime;
+  animation-timing-function: ease;
+  animation-duration: 4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  margin: 5px;
+}
+
+@keyframes skills-anime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.projects-container {
+  background-color: aliceblue;
+  min-height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-title {
+  padding-top: 70px;
+  margin: 10px;
+  text-align: center;
+  border-bottom: 2px solid orangered;
+}
+
+.projects-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project {
+  max-width: 400px;
+  margin: 5px;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  padding: 3px;
+  text-align: center;
+  height: 300px;
+}
+
+.project a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  flex-wrap: wrap;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.project a:hover {
+  padding: 5px;
+  margin: 5px;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.certificates-container {
+  padding-top: 60px;
+}
+
+.certificates-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.certificates-div img {
+  width: 100%;
+  height: 100%;
+}
+
+.cert-title {
+  text-align: center;
+  color: #00f2fe;
+}
+
+.single-img {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  width: 500px;
+  height: 400px;
+  padding: 5px;
+  margin: 8px;
+  border-radius: 4px;
+}
