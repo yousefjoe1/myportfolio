@@ -479,3 +479,20 @@ body {
   margin: 8px;
   border-radius: 4px;
 }
+
+.githubicon {
+  color: #00f2fe;
+  box-shadow: 2px 2px 3px black,-1px -1px 3px whitesmoke;
+  border-radius: 4px;
+}
+
+.githubicon:hover {
+  background-color: black;
+  color: white;
+}
+
+.email-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
